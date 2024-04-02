@@ -1,3 +1,5 @@
+@import "./reset";
+
 /* VARIABLES */
 $creek: #26383B;
 $glow: #FBCF2F;
@@ -5,6 +7,7 @@ $cape: #FDE1AD;
 $dark: #1E1E1E;
 $ivory: #F8F6F4;
 
+$font-family: "Instrument Sans", sans-serif;
 $heading-font-family: "Instrument Serif", serif;
 
 /* MIXINS */
@@ -22,9 +25,10 @@ $heading-font-family: "Instrument Serif", serif;
 /* GLOBAL */
 html,
 body {
-  height: 100%;
-  font-family: "Instrument Sans", sans-serif;
-  background: $ivory;
+    width: 100%;
+    height: 100%;
+    font-family: $font-family;
+    background: $ivory;
 }
 
 img {
@@ -143,7 +147,7 @@ header {
                 box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
                 margin-bottom: 24px;
 
-                img { border-radius: 16px; }
+                &, img { border-radius: 16px; }
             }
 
             .guide-button {
@@ -164,18 +168,30 @@ header {
 .guide-information {
     overflow: hidden;
     background-image: url('../assets/haltone.svg');
+    background-repeat: no-repeat;
     background-size: contain;
+    margin-top: 40px;
+    padding-bottom: 96px;
 
     .wave {
         background-image: url('../assets/wave.svg');
-        width: 2880px;
+        width: 100%;
         height: 110px;
     }
 
     .guide-list {
+        position: relative;
         padding-top: 96px;
         padding-bottom: 64px;
         background: $creek;
+
+        &::after {
+            content: '';
+            background: $creek;
+            position: absolute;
+            top: 100%; left: 0; right: 0;
+            height: 312px;
+        }
 
         h2 {
             @include inner();
@@ -209,6 +225,71 @@ header {
                 width: 48px;
                 height: 14px;
                 margin: 5px 0;
+            }
+        }
+    }
+
+    .page-gallery {
+        @include inner();
+        position: relative;
+        display: flex;
+        gap: 24px;
+
+        img {
+            box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
+            border-radius: 8px;
+            width: 270px;
+        }
+    }
+}
+
+.testimonials {
+    @include inner();
+    padding-bottom: 96px;
+
+    h2 {
+        color: $creek;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 115%;
+        margin-bottom: 48px;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    blockquote {
+        color: $creek;
+        font-family: $heading-font-family;
+        font-size: 32px;
+        line-height: 115%;
+
+        cite {
+            position: relative;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            padding-left: 32px;
+            margin-top: 24px;
+            font-family: $font-family;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0;
+                width: 24px;
+                height: 3px;
+                background: $glow;
+                margin-top: 16px;
+            }
+
+            .institute {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 115%;
             }
         }
     }

@@ -1,4 +1,4 @@
-# fishes-of-nc
+# The Fishes of North Carolina
 
-##Design File
+## Design File
 https://www.figma.com/file/8KzhTy5g7UdCevhRyX6y6D/%5BFISH%5D-UX-and-Design-Recommendations?type=design&node-id=23-16845&mode=dev

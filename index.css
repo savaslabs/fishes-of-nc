@@ -340,8 +340,7 @@ header .intro__guide .guide-button {
   }
 }
 .guide-information .guide-list ul li {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
   gap: 16px;
 }
 .guide-information .guide-list ul li::before {
@@ -351,6 +350,7 @@ header .intro__guide .guide-button {
   width: 48px;
   height: 14px;
   margin: 5px 0;
+  flex-shrink: 0;
 }
 .guide-information .page-gallery {
   max-width: 1160px;
@@ -373,28 +373,41 @@ header .intro__guide .guide-button {
 }
 
 .testimonials {
+  padding-bottom: 48px;
+  background-image: url("./assets/wave-mask.svg"), url("./assets/haltone.svg");
+  background-repeat: no-repeat, repeat;
+  background-position: bottom, top;
+  background-size: contain;
+}
+.testimonials h2 {
   max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 96px;
-}
-@media (max-width: 1200px) {
-  .testimonials {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
-.testimonials h2 {
   color: #26383B;
   font-size: 24px;
   font-weight: 700;
   line-height: 115%;
   margin-bottom: 48px;
 }
+@media (max-width: 1200px) {
+  .testimonials h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 .testimonials__wrapper {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+}
+@media (max-width: 1200px) {
+  .testimonials__wrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 .testimonials blockquote {
   color: #26383B;
@@ -431,7 +444,7 @@ header .intro__guide .guide-button {
   max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
-  padding: 96px 0;
+  padding: 144px 0;
 }
 @media (max-width: 1200px) {
   .cta {

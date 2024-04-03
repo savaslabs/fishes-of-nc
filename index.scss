@@ -218,18 +218,18 @@ header {
             line-height: 145%;
 
             li {
-                display: grid;
-                grid-template-columns: 1fr auto;
+                display: flex;
                 gap: 16px;
-            }
 
-            li::before {
-                content: '';
-                display: block;
-                background: url("./assets/fish.svg") no-repeat;
-                width: 48px;
-                height: 14px;
-                margin: 5px 0;
+                &::before {
+                    content: '';
+                    display: block;
+                    background: url("./assets/fish.svg") no-repeat;
+                    width: 48px;
+                    height: 14px;
+                    margin: 5px 0;
+                    flex-shrink: 0
+                }
             }
         }
     }
@@ -249,10 +249,14 @@ header {
 }
 
 .testimonials {
-    @include inner();
-    padding-bottom: 96px;
+    padding-bottom: 48px;
+    background-image: url('./assets/wave-mask.svg'), url('./assets/haltone.svg');
+    background-repeat: no-repeat, repeat;
+    background-position: bottom, top;
+    background-size: contain;
 
     h2 {
+        @include inner();
         color: $creek;
         font-size: 24px;
         font-weight: 700;
@@ -261,6 +265,7 @@ header {
     }
 
     &__wrapper {
+        @include inner();
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
@@ -302,7 +307,7 @@ header {
 
 .cta {
     @include inner();
-    padding: 96px 0;
+    padding: 144px 0;
 
     .container {
         position: relative;

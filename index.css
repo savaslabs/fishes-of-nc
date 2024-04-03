@@ -158,10 +158,22 @@ img {
   font-size: 0;
 }
 
-a {
-  text-decoration-style: dashed;
-  text-underline-offset: 4px;
+a:not(.logo a) {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px dashed #26383B;
   color: #26383B;
+  transition: 150ms ease;
+  padding-bottom: 2px;
+  line-height: 115%;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+a:not(.logo a):hover, a:not(.logo a):focus {
+  border-bottom-style: solid;
+}
+a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
+  box-shadow: inset 0 -2px 0 0 #26383B;
 }
 
 /* HEADER */
@@ -238,7 +250,11 @@ header .intro__text .order-links .order-unc {
   color: #26383B;
   line-height: 115%;
   min-width: 336px;
-  text-decoration: none;
+  border-bottom: none;
+}
+header .intro__text .order-links .order-unc:hover, header .intro__text .order-links .order-unc:focus {
+  background: #F8F6F4;
+  box-shadow: 0 0 0 1px #26383B;
 }
 header .intro__text .order-links .order-unc strong {
   font-size: 20px;
@@ -249,9 +265,8 @@ header .intro__text .order-links .order-unc span {
   font-weight: 500;
 }
 header .intro__text .order-links .order-amazon {
-  padding: 12px 0;
+  margin: 12px 0;
   color: #26383B;
-  text-align: center;
   font-size: 20px;
   font-weight: 700;
   line-height: 115%;
@@ -549,4 +564,5 @@ footer .container p span, footer .container p a {
   font-family: "Instrument Sans", sans-serif;
   font-size: 16px;
   margin-top: 16px;
+  border-bottom-color: white;
 }/*# sourceMappingURL=index.css.map */

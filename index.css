@@ -137,9 +137,15 @@ svg {
 html,
 body {
   width: 100%;
-  height: 100%;
   font-family: "Instrument Sans", sans-serif;
   background: #F8F6F4;
+}
+
+body {
+  background-image: url("./assets/swim.svg"), url("./assets/footer-swim.svg");
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-position: top, 50% calc(100% - 126px);
 }
 
 img {
@@ -488,6 +494,9 @@ header .intro__guide .guide-button {
   line-height: 115%;
 }
 
+footer {
+  padding-top: 238px;
+}
 footer .wave {
   background-image: url("./assets/footer-wave.svg");
   width: 100%;

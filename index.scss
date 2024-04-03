@@ -26,9 +26,15 @@ $heading-font-family: "Instrument Serif", serif;
 html,
 body {
     width: 100%;
-    height: 100%;
     font-family: $font-family;
     background: $ivory;
+}
+
+body {
+    background-image: url('./assets/swim.svg'), url('./assets/footer-swim.svg');
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: top, 50% calc(100% - 126px);
 }
 
 img {
@@ -360,6 +366,8 @@ header {
 }
 
 footer {
+    padding-top: 238px;
+    
     .wave {
         background-image: url('./assets/footer-wave.svg');
         width: 100%;

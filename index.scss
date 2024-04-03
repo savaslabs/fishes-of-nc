@@ -32,13 +32,6 @@ body {
     background: $ivory;
 }
 
-body {
-    background-image: url('./assets/swim.svg'), url('./assets/footer-swim.svg');
-    background-size: contain;
-    background-repeat: repeat-x;
-    background-position: top, 50% calc(100% - 126px);
-}
-
 img {
     display: block;
     width: 100%;
@@ -65,9 +58,23 @@ a:not(.logo a) {
     }
 }
 
+#swim-svg-1,
+#swim-svg-2 { 
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+
+#swim-svg-2 {
+    z-index: -1;
+    transform: scaleY(-1);
+    bottom: 126px;
+}
+
 /* HEADER */
 header {
     @include inner();
+    position: relative;
     padding: 64px 0;
 
     nav {
@@ -388,7 +395,9 @@ header {
 }
 
 footer {
-    padding-top: 238px;
+    position: relative;
+    z-index: 1;
+    padding-top: 175px;
     
     .wave {
         background-image: url('./assets/footer-wave.svg');

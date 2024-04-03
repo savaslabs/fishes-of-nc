@@ -141,13 +141,6 @@ body {
   background: #F8F6F4;
 }
 
-body {
-  background-image: url("./assets/swim.svg"), url("./assets/footer-swim.svg");
-  background-size: contain;
-  background-repeat: repeat-x;
-  background-position: top, 50% calc(100% - 126px);
-}
-
 img {
   display: block;
   width: 100%;
@@ -176,11 +169,25 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   box-shadow: inset 0 -2px 0 0 #26383B;
 }
 
+#swim-svg-1,
+#swim-svg-2 {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+
+#swim-svg-2 {
+  z-index: -1;
+  transform: scaleY(-1);
+  bottom: 126px;
+}
+
 /* HEADER */
 header {
   max-width: 1160px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
   padding: 64px 0;
 }
 @media (max-width: 1200px) {
@@ -523,7 +530,9 @@ header .intro__guide .guide-button {
 }
 
 footer {
-  padding-top: 238px;
+  position: relative;
+  z-index: 1;
+  padding-top: 175px;
 }
 footer .wave {
   background-image: url("./assets/footer-wave.svg");

@@ -19,8 +19,8 @@ $transition: 150ms ease;
     margin-right: auto;
 
     @media (max-width: (1160px + 40px)) {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 32px;
+        margin-right: 32px;
     }
 }
 
@@ -77,11 +77,16 @@ header {
     position: relative;
     padding: 64px 0;
 
+    @media (max-width: 800px) {
+        padding-top: 0;
+        padding-bottom: 25px;
+    }
+
     nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 32px;
         margin-bottom: 32px;
 
         .logo { width: 150px; }
@@ -95,12 +100,23 @@ header {
             font-size: 14px;
             line-height: 115%;
         }
+
+        @media (max-width: 800px) {
+            flex-direction: column-reverse;
+
+            .logo { width: 100px; }
+            
+            .home-button {
+                border-radius: 0;
+                width: 100%;
+            }
+        }
     }
 
     .intro {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 40px;
+        gap: 0 40px;
 
         &__text {
             padding: 32px 0;
@@ -108,7 +124,7 @@ header {
             h1 {
                 color: $creek;
                 font-family: $heading-font-family;
-                font-size: 72px;
+                font-size: clamp(34px, 7vw, 72px);
                 font-weight: 400;
                 line-height: 110%;
                 margin-bottom: 24px;
@@ -116,14 +132,14 @@ header {
 
             .description {
                 color: $dark;
-                font-size: 20px;
+                font-size: clamp(16px, 3vw, 20px);
                 line-height: 165%;
                 margin-bottom: 72px;
             }
 
             .order-heading {
                 color: $creek;
-                font-size: 32px;
+                font-size: clamp(24px, 5vw, 32px);
                 line-height: 115%;
                 margin-bottom: 16px;
                 font-family: $heading-font-family;
@@ -132,7 +148,8 @@ header {
             .order-links {
                 display: flex;
                 align-items: flex-start;
-                gap: 24px;
+                flex-wrap: wrap;
+                gap: 8px 24px;
                 max-width: 614px;
 
                 .order-unc {
@@ -141,7 +158,6 @@ header {
                     background: $glow;
                     color: $creek;
                     line-height: 115%;
-                    min-width: 336px;
                     border-bottom: none;
 
                     &:hover, &:focus {
@@ -175,7 +191,7 @@ header {
                 width: 358px;
                 height: 537px;
                 box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
-                margin-bottom: 24px;
+                margin: 0 auto;
 
                 &, img { border-radius: 16px; }
             }
@@ -188,7 +204,34 @@ header {
                 font-size: 14px;
                 line-height: 115%;
                 width: fit-content;
-                margin: auto;
+                margin: 24px auto 0;
+            }
+        }
+
+        @media (max-width: 850px) {
+            grid-template-columns: 1fr;
+
+            &__text {
+                .description { margin-bottom: 48px; }
+
+                .order-flex {
+                    display: flex;
+                    gap: 16px;
+                }
+
+                .order-heading {
+                    margin-bottom: 0;
+                    padding-right: 16px;
+                    padding-bottom: 12px;
+                    border-right: 1px solid $creek;
+                    flex-shrink: 0;
+                }
+            }
+
+            &__guide {
+                grid-row: 1;
+
+                .guide-button { display: none; }
             }
         }
     }
@@ -226,7 +269,7 @@ header {
             @include inner();
             color: $glow;
             font-family: $heading-font-family;
-            font-size: 40px;
+            font-size: clamp(28px, 4vw, 40px);
             font-weight: 400;
             line-height: 115%;
             margin-bottom: 40px;
@@ -256,6 +299,17 @@ header {
                 }
             }
         }
+
+        @media (max-width: 800px) {
+            padding-top: 48px;
+
+            &::after { height: 220px; }
+            
+            ul {
+                grid-template-columns: 1fr;
+                gap: 24px
+            }
+        }
     }
 
     .page-gallery {
@@ -268,6 +322,8 @@ header {
             box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
             border-radius: 8px;
             width: 270px;
+
+            @media (max-width: 800px) { width: 212px; }
         }
     }
 }
@@ -282,7 +338,7 @@ header {
     h2 {
         @include inner();
         color: $creek;
-        font-size: 24px;
+        font-size: clamp(20px, 3vw, 24px);
         font-weight: 700;
         line-height: 115%;
         margin-bottom: 48px;
@@ -293,17 +349,19 @@ header {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
+
+        @media (max-width: 800px) { grid-template-columns: 1fr; }
     }
 
     blockquote {
         color: $creek;
         font-family: $heading-font-family;
-        font-size: 32px;
+        font-size: clamp(24px, 4vw, 32px);
         line-height: 115%;
 
         cite {
             position: relative;
-            font-size: 24px;
+            font-size: clamp(16px, 3vw, 24px);
             font-style: normal;
             font-weight: 700;
             padding-left: 32px;
@@ -321,7 +379,7 @@ header {
             }
 
             .institute {
-                font-size: 16px;
+                font-size: clamp(14px, 3vw, 16px);
                 font-weight: 400;
                 line-height: 115%;
             }
@@ -337,6 +395,7 @@ header {
         position: relative;
         display: grid;
         grid-template-columns: 360px 1fr;
+        justify-items: center;
         gap: 80px;
         padding: 96px 100px 96px 60px;
         background: $glow;
@@ -366,7 +425,7 @@ header {
 
         .order-unc, .order-amazon {
             color: $creek;
-            font-size: 20px;
+            font-size: clamp(16px, 3vw, 20px);
             font-weight: 700;
             line-height: 115%;
         }
@@ -391,6 +450,31 @@ header {
         text-align: center;
         color: $creek;
         line-height: 115%;
+    }
+
+    @media (max-width: 1066px) {
+        padding-top: 280px;
+
+        figure {
+            top: -235px; left: auto;
+            width: 205px;
+        }
+
+        .container {
+            grid-template-columns: 1fr;
+            padding: 144px 32px 48px;
+        }
+
+        .order-links { 
+            grid-template-columns: 1fr;
+            gap: 4px;
+
+            .order-amazon { margin-top: 24px; }
+
+            span { grid-row: 2; }
+        }
+
+        .col-2 { grid-column: 1; }
     }
 }
 

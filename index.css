@@ -192,15 +192,21 @@ header {
 }
 @media (max-width: 1200px) {
   header {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+@media (max-width: 800px) {
+  header {
+    padding-top: 0;
+    padding-bottom: 25px;
   }
 }
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 32px;
   margin-bottom: 32px;
 }
 header nav .logo {
@@ -215,10 +221,22 @@ header nav .home-button {
   font-size: 14px;
   line-height: 115%;
 }
+@media (max-width: 800px) {
+  header nav {
+    flex-direction: column-reverse;
+  }
+  header nav .logo {
+    width: 100px;
+  }
+  header nav .home-button {
+    border-radius: 0;
+    width: 100%;
+  }
+}
 header .intro {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 40px;
+  gap: 0 40px;
 }
 header .intro__text {
   padding: 32px 0;
@@ -226,20 +244,20 @@ header .intro__text {
 header .intro__text h1 {
   color: #26383B;
   font-family: "Instrument Serif", serif;
-  font-size: 72px;
+  font-size: clamp(34px, 7vw, 72px);
   font-weight: 400;
   line-height: 110%;
   margin-bottom: 24px;
 }
 header .intro__text .description {
   color: #1E1E1E;
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   line-height: 165%;
   margin-bottom: 72px;
 }
 header .intro__text .order-heading {
   color: #26383B;
-  font-size: 32px;
+  font-size: clamp(24px, 5vw, 32px);
   line-height: 115%;
   margin-bottom: 16px;
   font-family: "Instrument Serif", serif;
@@ -247,7 +265,8 @@ header .intro__text .order-heading {
 header .intro__text .order-links {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 8px 24px;
   max-width: 614px;
 }
 header .intro__text .order-links .order-unc {
@@ -256,7 +275,6 @@ header .intro__text .order-links .order-unc {
   background: #FBCF2F;
   color: #26383B;
   line-height: 115%;
-  min-width: 336px;
   border-bottom: none;
 }
 header .intro__text .order-links .order-unc:hover, header .intro__text .order-links .order-unc:focus {
@@ -282,7 +300,7 @@ header .intro__guide figure {
   width: 358px;
   height: 537px;
   box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
-  margin-bottom: 24px;
+  margin: 0 auto;
 }
 header .intro__guide figure, header .intro__guide figure img {
   border-radius: 16px;
@@ -296,7 +314,32 @@ header .intro__guide .guide-button {
   line-height: 115%;
   width: -moz-fit-content;
   width: fit-content;
-  margin: auto;
+  margin: 24px auto 0;
+}
+@media (max-width: 850px) {
+  header .intro {
+    grid-template-columns: 1fr;
+  }
+  header .intro__text .description {
+    margin-bottom: 48px;
+  }
+  header .intro__text .order-flex {
+    display: flex;
+    gap: 16px;
+  }
+  header .intro__text .order-heading {
+    margin-bottom: 0;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    border-right: 1px solid #26383B;
+    flex-shrink: 0;
+  }
+  header .intro__guide {
+    grid-row: 1;
+  }
+  header .intro__guide .guide-button {
+    display: none;
+  }
 }
 
 /* GUIDE LIST INFORMATION */
@@ -333,15 +376,15 @@ header .intro__guide .guide-button {
   margin-right: auto;
   color: #FBCF2F;
   font-family: "Instrument Serif", serif;
-  font-size: 40px;
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 400;
   line-height: 115%;
   margin-bottom: 40px;
 }
 @media (max-width: 1200px) {
   .guide-information .guide-list h2 {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 .guide-information .guide-list ul {
@@ -357,8 +400,8 @@ header .intro__guide .guide-button {
 }
 @media (max-width: 1200px) {
   .guide-information .guide-list ul {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 .guide-information .guide-list ul li {
@@ -374,6 +417,18 @@ header .intro__guide .guide-button {
   margin: 5px 0;
   flex-shrink: 0;
 }
+@media (max-width: 800px) {
+  .guide-information .guide-list {
+    padding-top: 48px;
+  }
+  .guide-information .guide-list::after {
+    height: 220px;
+  }
+  .guide-information .guide-list ul {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
 .guide-information .page-gallery {
   max-width: 1160px;
   margin-left: auto;
@@ -384,14 +439,19 @@ header .intro__guide .guide-button {
 }
 @media (max-width: 1200px) {
   .guide-information .page-gallery {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 .guide-information .page-gallery img {
   box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
   border-radius: 8px;
   width: 270px;
+}
+@media (max-width: 800px) {
+  .guide-information .page-gallery img {
+    width: 212px;
+  }
 }
 
 .testimonials {
@@ -406,15 +466,15 @@ header .intro__guide .guide-button {
   margin-left: auto;
   margin-right: auto;
   color: #26383B;
-  font-size: 24px;
+  font-size: clamp(20px, 3vw, 24px);
   font-weight: 700;
   line-height: 115%;
   margin-bottom: 48px;
 }
 @media (max-width: 1200px) {
   .testimonials h2 {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 .testimonials__wrapper {
@@ -427,19 +487,24 @@ header .intro__guide .guide-button {
 }
 @media (max-width: 1200px) {
   .testimonials__wrapper {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+@media (max-width: 800px) {
+  .testimonials__wrapper {
+    grid-template-columns: 1fr;
   }
 }
 .testimonials blockquote {
   color: #26383B;
   font-family: "Instrument Serif", serif;
-  font-size: 32px;
+  font-size: clamp(24px, 4vw, 32px);
   line-height: 115%;
 }
 .testimonials blockquote cite {
   position: relative;
-  font-size: 24px;
+  font-size: clamp(16px, 3vw, 24px);
   font-style: normal;
   font-weight: 700;
   padding-left: 32px;
@@ -457,7 +522,7 @@ header .intro__guide .guide-button {
   margin-top: 16px;
 }
 .testimonials blockquote cite .institute {
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: 400;
   line-height: 115%;
 }
@@ -470,14 +535,15 @@ header .intro__guide .guide-button {
 }
 @media (max-width: 1200px) {
   .cta {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 .cta .container {
   position: relative;
   display: grid;
   grid-template-columns: 360px 1fr;
+  justify-items: center;
   gap: 80px;
   padding: 96px 100px 96px 60px;
   background: #FBCF2F;
@@ -506,7 +572,7 @@ header .intro__guide .guide-button {
 }
 .cta .order-links .order-unc, .cta .order-links .order-amazon {
   color: #26383B;
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   font-weight: 700;
   line-height: 115%;
 }
@@ -527,6 +593,33 @@ header .intro__guide .guide-button {
   text-align: center;
   color: #26383B;
   line-height: 115%;
+}
+@media (max-width: 1066px) {
+  .cta {
+    padding-top: 280px;
+  }
+  .cta figure {
+    top: -235px;
+    left: auto;
+    width: 205px;
+  }
+  .cta .container {
+    grid-template-columns: 1fr;
+    padding: 144px 32px 48px;
+  }
+  .cta .order-links {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .cta .order-links .order-amazon {
+    margin-top: 24px;
+  }
+  .cta .order-links span {
+    grid-row: 2;
+  }
+  .cta .col-2 {
+    grid-column: 1;
+  }
 }
 
 footer {
@@ -554,8 +647,8 @@ footer .container .grid {
 }
 @media (max-width: 1200px) {
   footer .container .grid {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 32px;
+    margin-right: 32px;
   }
 }
 footer .container .logo {

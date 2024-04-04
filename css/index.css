@@ -347,13 +347,13 @@ header .intro__guide .guide-button {
 /* GUIDE LIST INFORMATION */
 .guide-information {
   overflow: hidden;
-  background-image: url("./assets/haltone.svg");
+  background-image: url("../assets/haltone.svg");
   background-size: contain;
   margin-top: 40px;
   padding-bottom: 96px;
 }
 .guide-information .wave {
-  background-image: url("./assets/wave.svg");
+  background-image: url("../assets/wave.svg");
   width: 100%;
   height: 110px;
 }
@@ -413,7 +413,7 @@ header .intro__guide .guide-button {
 .guide-information .guide-list ul li::before {
   content: "";
   display: block;
-  background: url("./assets/fish.svg") no-repeat;
+  background: url("../assets/fish.svg") no-repeat;
   width: 48px;
   height: 14px;
   margin: 5px 0;
@@ -458,7 +458,7 @@ header .intro__guide .guide-button {
 
 .testimonials {
   padding-bottom: 48px;
-  background-image: url("./assets/wave-mask.svg"), url("./assets/haltone.svg");
+  background-image: url("../assets/wave-mask.svg"), url("../assets/haltone.svg");
   background-repeat: no-repeat, repeat;
   background-position: bottom, top;
   background-size: contain;
@@ -632,7 +632,7 @@ footer {
   padding-top: 175px;
 }
 footer .wave {
-  background-image: url("./assets/footer-wave.svg");
+  background-image: url("../assets/footer-wave.svg");
   width: 100%;
   height: 182.6px;
 }

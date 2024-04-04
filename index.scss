@@ -499,8 +499,9 @@ footer {
         .grid {
             @include inner();
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px;
+            gap: 48px;
             align-items: flex-start;
         }
 

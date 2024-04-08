@@ -499,12 +499,14 @@ header .intro__guide .guide-button {
 .testimonials {
   position: relative;
   overflow: hidden;
+  z-index: 1;
   padding-bottom: 48px;
   background-image: url("../assets/haltone.svg");
   background-repeat: repeat;
 }
 .testimonials .mask {
   bottom: 0;
+  z-index: -1;
 }
 .testimonials h2 {
   max-width: 1160px;

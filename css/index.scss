@@ -374,11 +374,15 @@ header {
 .testimonials {
     position: relative;
     overflow: hidden;
+    z-index: 1;
     padding-bottom: 48px;
     background-image: url('../assets/haltone.svg');
     background-repeat: repeat;
 
-    .mask { bottom: 0; }
+    .mask { 
+        bottom: 0; 
+        z-index: -1;
+    }
 
     h2 {
         @include inner();

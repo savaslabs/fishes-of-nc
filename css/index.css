@@ -133,6 +133,15 @@ svg {
 
 /* VARIABLES */
 /* MIXINS */
+/* KEYFRAMES */
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
 /* GLOBAL */
 html,
 body {
@@ -180,6 +189,38 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   z-index: -1;
   transform: scaleY(-1);
   bottom: 126px;
+}
+
+.wave-container {
+  width: 100%;
+}
+.wave-container.mask {
+  position: absolute;
+}
+.wave-container #wave-mask-1, .wave-container #wave-mask-2 {
+  width: 6400px;
+  animation: wave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+}
+.wave-container #wave-1, .wave-container #wave-2 {
+  width: 6400px;
+  animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+.wave-container #wave-mask-1 {
+  background: url("../assets/wave-mask-1.svg") repeat-x;
+  height: 150px;
+}
+.wave-container #wave-mask-2 {
+  background: url("../assets/wave-mask-2.svg") repeat-x;
+  height: 219px;
+}
+.wave-container #wave-1 {
+  background: url("../assets/wave-1.svg") repeat-x;
+  height: 110px;
+}
+.wave-container #wave-2 {
+  background: url("../assets/wave-2.svg") repeat-x;
+  height: 183px;
 }
 
 /* HEADER */
@@ -346,16 +387,15 @@ header .intro__guide .guide-button {
 
 /* GUIDE LIST INFORMATION */
 .guide-information {
+  position: relative;
   overflow: hidden;
   background-image: url("../assets/haltone.svg");
-  background-size: contain;
-  margin-top: 40px;
+  padding-top: 40px;
   padding-bottom: 96px;
 }
-.guide-information .wave {
-  background-image: url("../assets/wave.svg");
-  width: 100%;
-  height: 110px;
+.guide-information .mask {
+  top: 0;
+  transform: scaleY(-1);
 }
 .guide-information .guide-list {
   position: relative;
@@ -457,11 +497,14 @@ header .intro__guide .guide-button {
 }
 
 .testimonials {
+  position: relative;
+  overflow: hidden;
   padding-bottom: 48px;
-  background-image: url("../assets/wave-mask.svg"), url("../assets/haltone.svg");
-  background-repeat: no-repeat, repeat;
-  background-position: bottom, top;
-  background-size: contain;
+  background-image: url("../assets/haltone.svg");
+  background-repeat: repeat;
+}
+.testimonials .mask {
+  bottom: 0;
 }
 .testimonials h2 {
   max-width: 1160px;
@@ -628,13 +671,9 @@ header .intro__guide .guide-button {
 
 footer {
   position: relative;
+  overflow: hidden;
   z-index: 1;
   padding-top: 175px;
-}
-footer .wave {
-  background-image: url("../assets/footer-wave.svg");
-  width: 100%;
-  height: 182.6px;
 }
 footer .container {
   background: #26383B;

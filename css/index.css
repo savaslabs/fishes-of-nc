@@ -131,6 +131,91 @@ svg {
   overflow: hidden;
 }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.slick-list:focus {
+  outline: none;
+}
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+.slick-track:after {
+  clear: both;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+[dir=rtl] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-slide.slick-loading img {
+  display: none;
+}
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
 /* VARIABLES */
 /* MIXINS */
 /* KEYFRAMES */
@@ -476,8 +561,6 @@ header .intro__guide .guide-button {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  display: flex;
-  gap: 24px;
 }
 @media (max-width: 1200px) {
   .guide-information .page-gallery {
@@ -485,16 +568,14 @@ header .intro__guide .guide-button {
     margin-right: 32px;
   }
 }
-.guide-information .page-gallery img {
+.guide-information .page-gallery .slick-slide {
+  cursor: grab;
+  max-width: 270px;
+  margin-right: 24px;
+}
+.guide-information .page-gallery .slick-slide img {
   box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
   border-radius: 8px;
-  width: 270px;
-  cursor: grab;
-}
-@media (max-width: 800px) {
-  .guide-information .page-gallery img {
-    width: 212px;
-  }
 }
 
 .testimonials {

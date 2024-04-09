@@ -1,4 +1,5 @@
 @import "./reset";
+@import "../vendor/slick";
 
 /* VARIABLES */
 $creek: #26383B;
@@ -358,16 +359,18 @@ header {
     .page-gallery {
         @include inner();
         position: relative;
-        display: flex;
-        gap: 24px;
 
-        img {
-            box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
-            border-radius: 8px;
-            width: 270px;
+        .slick-slide {
             cursor: grab;
+            max-width: 270px;
+            margin-right: 24px;
 
-            @media (max-width: 800px) { width: 212px; }
+            img {
+                box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
+                border-radius: 8px;
+
+                //@media (max-width: 800px) { width: 212px; }
+            }
         }
     }
 }

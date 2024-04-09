@@ -489,6 +489,7 @@ header .intro__guide .guide-button {
   box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
   border-radius: 8px;
   width: 270px;
+  cursor: grab;
 }
 @media (max-width: 800px) {
   .guide-information .page-gallery img {

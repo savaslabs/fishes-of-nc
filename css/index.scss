@@ -26,8 +26,8 @@ $transition: 150ms ease;
 
 /* KEYFRAMES */
 @keyframes wave {
-    0% { margin-left: 0; }
-    100% { margin-left: -1600px; }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-2900px); }
 }
 
 /* GLOBAL */
@@ -84,12 +84,12 @@ a:not(.logo a) {
 
     #wave-mask-1, #wave-mask-2 {
         width: 6400px;
-        animation: wave 15s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+        animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
     }
 
     #wave-1, #wave-2 {
         width: 6400px;
-        animation: wave 20s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+        animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
         transform: translate3d(0, 0, 0);
     }
 

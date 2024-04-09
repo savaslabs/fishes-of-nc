@@ -136,10 +136,10 @@ svg {
 /* KEYFRAMES */
 @keyframes wave {
   0% {
-    margin-left: 0;
+    transform: translateX(0);
   }
   100% {
-    margin-left: -1600px;
+    transform: translateX(-2900px);
   }
 }
 /* GLOBAL */
@@ -199,11 +199,11 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
 }
 .wave-container #wave-mask-1, .wave-container #wave-mask-2 {
   width: 6400px;
-  animation: wave 15s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
 }
 .wave-container #wave-1, .wave-container #wave-2 {
   width: 6400px;
-  animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
 }
 .wave-container #wave-mask-1 {

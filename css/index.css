@@ -570,8 +570,13 @@ header .intro__guide .guide-button {
 }
 .guide-information .page-gallery .slick-slide {
   cursor: grab;
-  max-width: 270px;
+  width: 270px;
   margin-right: 24px;
+}
+@media (max-width: 800px) {
+  .guide-information .page-gallery .slick-slide {
+    width: 212px;
+  }
 }
 .guide-information .page-gallery .slick-slide img {
   box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);

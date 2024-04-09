@@ -39,8 +39,7 @@ $(document).ready(function() {
         breakpoint: 420,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          variableWidth: false,
+          slidesToScroll: 1
         }
       }
     ]

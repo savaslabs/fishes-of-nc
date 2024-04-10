@@ -11,7 +11,8 @@ $ivory: #F8F6F4;
 $font-family: "Instrument Sans", sans-serif;
 $heading-font-family: "Instrument Serif", serif;
 
-$transition: 150ms ease;
+$transition-function: cubic-bezier(0.36, 0.45, 0.63, 0.53);
+$transition: 150ms $transition-function;
 
 /* MIXINS */
 @mixin inner() {
@@ -29,6 +30,12 @@ $transition: 150ms ease;
 @keyframes wave {
     0% { transform: translateX(0); }
     100% { transform: translateX(-2900px); }
+}
+
+@keyframes footerWave {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-900px); }
+    100% { transform: translateX(-900px); }
 }
 
 /* GLOBAL */
@@ -83,16 +90,13 @@ a:not(.logo a) {
 
     &.mask { position: absolute; }
 
+    #wave-1, #wave-2,
     #wave-mask-1, #wave-mask-2 {
         width: 6400px;
-        animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-    }
-
-    #wave-1, #wave-2 {
-        width: 6400px;
-        animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
         transform: translate3d(0, 0, 0);
     }
+
+    #wave-mask-1, #wave-mask-2 { animation: wave 10s $transition-function infinite; }
 
     #wave-mask-1 {
         background: url("../assets/wave-mask-1.svg") repeat-x; 
@@ -105,6 +109,7 @@ a:not(.logo a) {
     }
 
     #wave-1 {
+        animation: wave 12s $transition-function infinite;
         background: url("../assets/wave-1.svg") repeat-x; 
         height: 110px;
     }
@@ -112,6 +117,8 @@ a:not(.logo a) {
     #wave-2 {
         background: url("../assets/wave-2.svg") repeat-x; 
         height: 183px;
+
+        &.animate-once { animation: footerWave 12s $transition-function forwards; }
     }
 }
 

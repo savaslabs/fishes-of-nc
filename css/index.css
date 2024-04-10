@@ -227,6 +227,17 @@ svg {
     transform: translateX(-2900px);
   }
 }
+@keyframes footerWave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-900px);
+  }
+  100% {
+    transform: translateX(-900px);
+  }
+}
 /* GLOBAL */
 html,
 body {
@@ -250,7 +261,7 @@ a:not(.logo a) {
   text-decoration: none;
   border-bottom: 1px dashed #26383B;
   color: #26383B;
-  transition: 150ms ease;
+  transition: 150ms cubic-bezier(0.36, 0.45, 0.63, 0.53);
   padding-bottom: 2px;
   line-height: 115%;
   width: -moz-fit-content;
@@ -282,14 +293,13 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
 .wave-container.mask {
   position: absolute;
 }
+.wave-container #wave-1, .wave-container #wave-2,
 .wave-container #wave-mask-1, .wave-container #wave-mask-2 {
   width: 6400px;
-  animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
-}
-.wave-container #wave-1, .wave-container #wave-2 {
-  width: 6400px;
-  animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
+}
+.wave-container #wave-mask-1, .wave-container #wave-mask-2 {
+  animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
 }
 .wave-container #wave-mask-1 {
   background: url("../assets/wave-mask-1.svg") repeat-x;
@@ -300,12 +310,16 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   height: 219px;
 }
 .wave-container #wave-1 {
+  animation: wave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
   background: url("../assets/wave-1.svg") repeat-x;
   height: 110px;
 }
 .wave-container #wave-2 {
   background: url("../assets/wave-2.svg") repeat-x;
   height: 183px;
+}
+.wave-container #wave-2.animate-once {
+  animation: footerWave 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) forwards;
 }
 
 /* HEADER */

@@ -29,11 +29,11 @@ $transition: 150ms $transition-function;
 /* KEYFRAMES */
 @keyframes wave {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-2900px); }
+    100% { transform: translateX(-2890px); }
 }
 
 @keyframes wave-mask {
-    0% { transform: translateX(-2900px); }
+    0% { transform: translateX(-2890px); }
     100% { transform: translateX(0); }
 }
 
@@ -71,17 +71,18 @@ a:not(.logo a) {
     }
 }
 
-#swim-svg-1,
-#swim-svg-2 { 
+.fish-container {
     position: absolute;
-    overflow: hidden;
     width: 100%;
-}
+    overflow: hidden;
 
-#swim-svg-2 {
-    z-index: -1;
-    transform: scaleY(-1);
-    bottom: 126px;
+    #fish-1, #fish-2 {
+        width: 1500rem;
+        height: 400px;
+        transform: translate3d(0, 0, 0);
+        background: url("../assets/swim.svg") repeat-x; 
+        animation: wave 22s $transition-function infinite;
+    }
 }
 
 .wave-container {
@@ -544,6 +545,16 @@ footer {
     overflow: hidden;
     z-index: 1;
     padding-top: 175px;
+
+    .fish-container {
+        z-index: -1;
+        transform: scaleY(-1);
+        bottom: 126px;
+
+        @media (max-width: 1031px) { bottom: 350px; }
+
+        @media (max-width: 500px) { bottom: 400px; }
+    }
 
     .container {
         background: $creek;

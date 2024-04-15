@@ -224,12 +224,12 @@ svg {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-2900px);
+    transform: translateX(-2890px);
   }
 }
 @keyframes wave-mask {
   0% {
-    transform: translateX(-2900px);
+    transform: translateX(-2890px);
   }
   100% {
     transform: translateX(0);
@@ -271,17 +271,17 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   box-shadow: inset 0 -2px 0 0 #26383B;
 }
 
-#swim-svg-1,
-#swim-svg-2 {
+.fish-container {
   position: absolute;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
 }
-
-#swim-svg-2 {
-  z-index: -1;
-  transform: scaleY(-1);
-  bottom: 126px;
+.fish-container #fish-1, .fish-container #fish-2 {
+  width: 1500rem;
+  height: 400px;
+  transform: translate3d(0, 0, 0);
+  background: url("../assets/swim.svg") repeat-x;
+  animation: wave 22s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
 }
 
 .wave-container {
@@ -773,6 +773,21 @@ footer {
   overflow: hidden;
   z-index: 1;
   padding-top: 175px;
+}
+footer .fish-container {
+  z-index: -1;
+  transform: scaleY(-1);
+  bottom: 126px;
+}
+@media (max-width: 1031px) {
+  footer .fish-container {
+    bottom: 350px;
+  }
+}
+@media (max-width: 500px) {
+  footer .fish-container {
+    bottom: 400px;
+  }
 }
 footer .container {
   background: #26383B;

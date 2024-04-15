@@ -32,10 +32,9 @@ $transition: 150ms $transition-function;
     100% { transform: translateX(-2900px); }
 }
 
-@keyframes footerWave {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-900px); }
-    100% { transform: translateX(-900px); }
+@keyframes wave-mask {
+    0% { transform: translateX(-2900px); }
+    100% { transform: translateX(0); }
 }
 
 /* GLOBAL */
@@ -92,11 +91,13 @@ a:not(.logo a) {
 
     #wave-1, #wave-2,
     #wave-mask-1, #wave-mask-2 {
-        width: 6400px;
+        width: 1500rem;
         transform: translate3d(0, 0, 0);
     }
 
-    #wave-mask-1, #wave-mask-2 { animation: wave 10s $transition-function infinite; }
+    #wave-mask-1, #wave-mask-2 { animation: wave-mask 18s $transition-function infinite; }
+
+    #wave-1, #wave-2 { animation: wave 20s $transition-function infinite; }
 
     #wave-mask-1 {
         background: url("../assets/wave-mask-1.svg") repeat-x; 
@@ -109,7 +110,6 @@ a:not(.logo a) {
     }
 
     #wave-1 {
-        animation: wave 12s $transition-function infinite;
         background: url("../assets/wave-1.svg") repeat-x; 
         height: 110px;
     }
@@ -117,8 +117,6 @@ a:not(.logo a) {
     #wave-2 {
         background: url("../assets/wave-2.svg") repeat-x; 
         height: 183px;
-
-        &.animate-once { animation: footerWave 12s $transition-function forwards; }
     }
 }
 

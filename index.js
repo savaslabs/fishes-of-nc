@@ -62,17 +62,3 @@ function isWaveInViewport(el) {
     el.contains(efp(rect.right, rect.bottom)) || el.contains(efp(rect.left,  rect.bottom))
   );
 }
-
-function animateWaveOnScroll() {
-  let footer = document.querySelector('footer');
-  let wave = footer.querySelector('#wave-2');
-
-  if (isWaveInViewport(footer)) {
-    wave.classList.add('animate-once');
-  } else {
-    wave.classList.remove('animate-once');
-  }
-}
-
-window.addEventListener('scroll', animateWaveOnScroll);
-animateWaveOnScroll();

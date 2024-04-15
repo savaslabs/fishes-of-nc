@@ -62,3 +62,28 @@ function isWaveInViewport(el) {
     el.contains(efp(rect.right, rect.bottom)) || el.contains(efp(rect.left,  rect.bottom))
   );
 }
+
+// Lightbox JS
+let pages = document.querySelectorAll(".page-gallery .page");
+let lightbox = document.querySelector(".lightbox");
+let selectedPage = lightbox.querySelector(".page");
+let close = lightbox.querySelector(".close");
+
+pages.forEach(page => {
+  page.addEventListener('click', function() {
+    lightbox.setAttribute('aria-hidden', 'false');
+
+    let clickedSrc = page.getAttribute('src');
+    selectedPage.setAttribute('src', clickedSrc);
+  });
+});
+
+close.addEventListener('click', function() {
+  lightbox.setAttribute('aria-hidden', 'true');
+});
+
+window.addEventListener('click', function(event) {
+  if (event.target.classList.contains('lightbox')) {
+    lightbox.setAttribute('aria-hidden', 'true');
+  }
+});

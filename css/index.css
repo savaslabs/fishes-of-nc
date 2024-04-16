@@ -405,6 +405,11 @@ header .intro__text .order-links {
   gap: 8px 24px;
   max-width: 614px;
 }
+@media (max-width: 1075px) {
+  header .intro__text .order-links {
+    align-items: center;
+  }
+}
 header .intro__text .order-links .order-unc {
   padding: 16px 32px;
   border-radius: 4px;

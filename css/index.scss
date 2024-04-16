@@ -202,6 +202,8 @@ header {
                 gap: 8px 24px;
                 max-width: 614px;
 
+                @media (max-width: 1075px) { align-items: center; }
+
                 .order-unc {
                     padding: 16px 32px;
                     border-radius: 4px;

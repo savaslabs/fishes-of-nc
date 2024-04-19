@@ -281,7 +281,7 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   height: 400px;
   transform: translate3d(0, 0, 0);
   background: url("../assets/swim.svg") repeat-x;
-  animation: wave 22s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 72s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
 }
 
 .wave-container {

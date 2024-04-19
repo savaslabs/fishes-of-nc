@@ -296,10 +296,10 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   transform: translate3d(0, 0, 0);
 }
 .wave-container #wave-mask-1, .wave-container #wave-mask-2 {
-  animation: wave-mask 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave-mask 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite reverse;
 }
 .wave-container #wave-1, .wave-container #wave-2 {
-  animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite reverse;
 }
 .wave-container #wave-mask-1 {
   background: url("../assets/wave-mask-1.svg") repeat-x;

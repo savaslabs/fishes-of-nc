@@ -96,9 +96,9 @@ a:not(.logo a) {
         transform: translate3d(0, 0, 0);
     }
 
-    #wave-mask-1, #wave-mask-2 { animation: wave-mask 18s $transition-function infinite; }
+    #wave-mask-1, #wave-mask-2 { animation: wave-mask 18s $transition-function infinite reverse; }
 
-    #wave-1, #wave-2 { animation: wave 20s $transition-function infinite; }
+    #wave-1, #wave-2 { animation: wave 20s $transition-function infinite reverse; }
 
     #wave-mask-1 {
         background: url("../assets/wave-mask-1.svg") repeat-x; 

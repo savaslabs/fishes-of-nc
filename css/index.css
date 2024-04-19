@@ -405,12 +405,10 @@ header .intro__text .order-links {
   gap: 8px 24px;
   max-width: 614px;
 }
-@media (max-width: 1075px) {
-  header .intro__text .order-links {
-    align-items: center;
-  }
-}
-header .intro__text .order-links .order-unc {
+header .intro__text .order-links .order-unc a {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 16px;
   padding: 16px 32px;
   border-radius: 4px;
   background: #FBCF2F;
@@ -418,17 +416,16 @@ header .intro__text .order-links .order-unc {
   line-height: 115%;
   border-bottom: none;
 }
-header .intro__text .order-links .order-unc:hover, header .intro__text .order-links .order-unc:focus {
+header .intro__text .order-links .order-unc a:hover, header .intro__text .order-links .order-unc a:focus {
   background: #F8F6F4;
   box-shadow: 0 0 0 1px #26383B;
 }
-header .intro__text .order-links .order-unc strong {
-  font-size: 20px;
-  margin-bottom: 16px;
-}
 header .intro__text .order-links .order-unc span {
-  font-size: 14px;
+  font-size: clamp(14px, 2vw, 16px);
   font-weight: 500;
+  text-align: center;
+  line-height: 145%;
+  max-width: 247px;
 }
 header .intro__text .order-links .order-amazon {
   margin: 12px 0;
@@ -456,13 +453,7 @@ header .intro__guide .guide-button {
   width: fit-content;
   margin: 24px auto 0;
 }
-@media (max-width: 850px) {
-  header .intro {
-    grid-template-columns: 1fr;
-  }
-  header .intro__text .description {
-    margin-bottom: 48px;
-  }
+@media (max-width: 922px) {
   header .intro__text .order-flex {
     display: flex;
     gap: 16px;
@@ -473,6 +464,20 @@ header .intro__guide .guide-button {
     padding-bottom: 12px;
     border-right: 1px solid #26383B;
     flex-shrink: 0;
+  }
+  header .intro__text .order-links .order-unc a {
+    margin-bottom: 8px;
+  }
+  header .intro__text .order-links .order-unc span {
+    text-align: left;
+  }
+}
+@media (max-width: 850px) {
+  header .intro {
+    grid-template-columns: 1fr;
+  }
+  header .intro__text .description {
+    margin-bottom: 48px;
   }
   header .intro__guide {
     grid-row: 1;

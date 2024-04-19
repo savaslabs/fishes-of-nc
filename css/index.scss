@@ -202,29 +202,30 @@ header {
                 gap: 8px 24px;
                 max-width: 614px;
 
-                @media (max-width: 1075px) { align-items: center; }
-
                 .order-unc {
-                    padding: 16px 32px;
-                    border-radius: 4px;
-                    background: $glow;
-                    color: $creek;
-                    line-height: 115%;
-                    border-bottom: none;
-
-                    &:hover, &:focus {
-                        background: $ivory;
-                        box-shadow: 0 0 0 1px $creek;
-                    }
-
-                    strong {
+                    a {
+                        font-weight: 700;
                         font-size: 20px;
                         margin-bottom: 16px;
+                        padding: 16px 32px;
+                        border-radius: 4px;
+                        background: $glow;
+                        color: $creek;
+                        line-height: 115%;
+                        border-bottom: none;
+
+                        &:hover, &:focus {
+                            background: $ivory;
+                            box-shadow: 0 0 0 1px $creek;
+                        }
                     }
 
                     span {
-                        font-size: 14px;
+                        font-size: clamp(14px, 2vw, 16px);
                         font-weight: 500;
+                        text-align: center;
+                        line-height: 145%;
+                        max-width: 247px;
                     }
                 }
 
@@ -259,12 +260,8 @@ header {
             }
         }
 
-        @media (max-width: 850px) {
-            grid-template-columns: 1fr;
-
+        @media (max-width: 922px) {
             &__text {
-                .description { margin-bottom: 48px; }
-
                 .order-flex {
                     display: flex;
                     gap: 16px;
@@ -277,7 +274,19 @@ header {
                     border-right: 1px solid $creek;
                     flex-shrink: 0;
                 }
+
+                .order-links .order-unc {
+                    a { margin-bottom: 8px; }
+                    
+                    span { text-align: left; }
+                }
             }
+        }
+
+        @media (max-width: 850px) {
+            grid-template-columns: 1fr;
+
+            &__text .description { margin-bottom: 48px; }
 
             &__guide {
                 grid-row: 1;

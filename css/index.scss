@@ -32,11 +32,6 @@ $transition: 150ms $transition-function;
     100% { transform: translateX(-2890px); }
 }
 
-@keyframes wave-mask {
-    0% { transform: translateX(-2890px); }
-    100% { transform: translateX(0); }
-}
-
 /* GLOBAL */
 html,
 body {
@@ -96,7 +91,7 @@ a:not(.logo a) {
         transform: translate3d(0, 0, 0);
     }
 
-    #wave-mask-1, #wave-mask-2 { animation: wave-mask 18s $transition-function infinite reverse; }
+    #wave-mask-1, #wave-mask-2 { animation: wave 18s $transition-function infinite; }
 
     #wave-1, #wave-2 { animation: wave 20s $transition-function infinite reverse; }
 
@@ -387,6 +382,9 @@ header {
             img {
                 box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
                 border-radius: 8px;
+                transition: $transition;
+
+                &:hover, &:focus { box-shadow: none; }
             }
         }
     }

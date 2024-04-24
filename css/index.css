@@ -227,14 +227,6 @@ svg {
     transform: translateX(-2890px);
   }
 }
-@keyframes wave-mask {
-  0% {
-    transform: translateX(-2890px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 /* GLOBAL */
 html,
 body {
@@ -296,7 +288,7 @@ a:not(.logo a).bold-link:hover, a:not(.logo a).bold-link:focus {
   transform: translate3d(0, 0, 0);
 }
 .wave-container #wave-mask-1, .wave-container #wave-mask-2 {
-  animation: wave-mask 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite reverse;
+  animation: wave 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
 }
 .wave-container #wave-1, .wave-container #wave-2 {
   animation: wave 20s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite reverse;
@@ -601,6 +593,10 @@ header .intro__guide .guide-button {
 .guide-information .page-gallery .slick-slide img {
   box-shadow: 0px 8px 24px 0px rgba(30, 30, 30, 0.15);
   border-radius: 8px;
+  transition: 150ms cubic-bezier(0.36, 0.45, 0.63, 0.53);
+}
+.guide-information .page-gallery .slick-slide img:hover, .guide-information .page-gallery .slick-slide img:focus {
+  box-shadow: none;
 }
 
 .testimonials {
